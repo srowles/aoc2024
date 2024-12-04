@@ -36,6 +36,14 @@ func (c *Coord) Diff(other Coord) Coord {
 	}
 }
 
+func (c Coord) Equal(other Coord) bool {
+	if c.X == other.X && c.Y == other.Y {
+		return true
+	}
+
+	return false
+}
+
 // Abs returns the absolute (non negative) value of the input
 func Abs[T constraints.Integer | constraints.Float](x T) T {
 	if x < 0 {
